@@ -5,7 +5,11 @@ In every css comment spcificitet is specified!
 */
 
 
-/* reset  */
+/* sass variables */
+$fontgreen:#00D66E;
+$backgreen:#00D66E;
+$fontbrown:#280003;
+$backbrown:#280003;
 
 /* general */
 /*0001*/
@@ -18,7 +22,7 @@ html,body{
   font-size: 16px;
   font-weight: 400;
   overflow-x: hidden;
-  background: url('images/Bakgrund@2x.jpg');
+  background: url('../images/Bakgrund@2x.jpg');
   background-size: 100%;
 }
 
@@ -48,7 +52,7 @@ main{
 /*0001*/
 h1,h2,h3, a{
   font-family:'Kaushan Script', cursive;
-  color:white;/*#B2E392*/
+  color:white;
   text-decoration: none;
 }
 h1{
@@ -60,7 +64,7 @@ h2{
 }
 /*0010*/
 .aside2{
-  color:#280003;
+  color:$fontbrown;
   margin-left: 2rem;
   margin-right:2rem;
 }
@@ -92,7 +96,7 @@ a{
 /*0010*/
 .green{
   font-size: 6rem;
-  color: #00D66E;
+  color: $fontgreen;
 }
 /*0001*/
 p,li{
@@ -147,7 +151,7 @@ ul{
 /* --------------------------header--------------------- */
 /*0001*/
 header{
-  background: #280003;
+  background: $backbrown;
   width:100%;
   height: 4em;
   display:flex;
@@ -160,10 +164,19 @@ header{
 /*logo in header*/
 /*0010*/
 .logo{
-  margin-left: 6rem;
+
   margin-right: 0;
-  height:3em;
-  width: 3em;
+  height:3.5em;
+  width: 3.5em;
+}
+.logocontainer{
+  margin-left: 6rem;
+  display: flex;
+  width:10rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
 
 }
 /*navigation menu*/
@@ -210,7 +223,7 @@ section{
 /*0010*/
 .banner{
   border:1rem solid white;
-  background: url("images/landingpage2@2x.jpg");
+  background: url("../images/landingpage2@2x.jpg");
   background-size: cover;
   margin-bottom: 1rem;
 }
@@ -244,7 +257,7 @@ article{
   background: #00D66E;
   margin:0;
   color:white;
-  tex
+
 
 }
 /*0001 återanvänds*/
@@ -481,6 +494,13 @@ td{
    }
 }
 @media screen and (max-width:992px){
+
+  nav{
+    margin-right: 2rem;
+  }
+  .logocontainer{
+    margin-left: 2rem;
+  }
   .center{
       display:flex;
       flex-direction: column;
@@ -585,26 +605,21 @@ table{
     min-width: 0;
   }
 
-  /*h2,.aside{
-    font-size:1.1rem;
-    margin-left: 0.5rem;
-
-    }*/
   nav{
     width:100%;
     color: #280003;
-
-    margin:1rem;
-    left:0;
+    margin: 1rem;
+    left: 0;
   }
   footer{
     display: none;
   }
 
   aside,.asideright{
-
-    height:15rem;
+    height: 15rem;
   }
+
   .heading{
     font-size: 2rem;
+  }
 }
